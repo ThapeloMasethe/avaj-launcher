@@ -70,8 +70,11 @@ public class JetPlane extends Aircraft implements Flyable {
         if (this.coordinates.getHeight() == 0) {
             this.weatherTower.unregister(this);
             Simulator.printWriter.println("JetPlane#" + this.name + "(" + this.id + ") landing.");
+            Simulator.printWriter.println("Tower says: Baloon#" + this.name + "(" + this.id + ")" 
+        + " unregistered from weather tower.");
         }
     }
+    
     /**
      * Register JetPlane to the tower.
      * 
