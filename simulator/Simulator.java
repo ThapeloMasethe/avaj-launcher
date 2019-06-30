@@ -155,8 +155,8 @@ public class Simulator {
             } catch (Exception exception) {
                 System.out.println(exception.getMessage());
            }
-        } else if (args[0].isEmpty()) {
-            System.out.println("Input file not found!");
+        } else {
+            System.out.println("ERROR: Input file not found!");
         }
     }
 }

@@ -47,7 +47,7 @@ public class Md5Checker {
 
         // Check if if the contents are the same.
         if (!hash.equals(md5Hash)) {
-            throw new Exception("Contents do not match!");
+            throw new Exception("ERROR: The hashed value does not match content of your input file!");
         }
     }
 }
