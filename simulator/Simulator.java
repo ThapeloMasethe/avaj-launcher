@@ -37,7 +37,7 @@ public class Simulator {
             height = Integer.parseInt(hgt);
         } catch (NumberFormatException numberFormatException) {
            throw new InvalidCoordinatesException(numberFormatException.getMessage()
-           + " must be an integer!");
+           + " is not an integer!");
         }
         // Check if Coordinates are positive.
         if (latitude < 0) {
@@ -81,7 +81,7 @@ public class Simulator {
                             throw new InvalidFileContentException("First line must be a positive integer.");
                         }
                     } catch (Exception exception) {
-                        throw new InvalidFileContentException("First line must be an integer.");
+                        throw new InvalidFileContentException("First line must be a positive integer.");
                     }
                 } else {
                     aircraftDetails = lines.split(" ");
