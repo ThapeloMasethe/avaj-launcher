@@ -1,14 +1,9 @@
-package weather;
+package za.co.tmasethe.controller;
 
-import aircrafts.Coordinates;
+import za.co.tmasethe.model.Coordinates;
 
-/**
- * WeatherTower Class
- * 
- * @author  Thapelo Masethe
- * @since   2019-06-20
- * @version 1.0
- */
+import java.security.NoSuchAlgorithmException;
+
 public class WeatherTower extends Tower {
 
     /**
@@ -17,12 +12,12 @@ public class WeatherTower extends Tower {
      * @param coordinates The coordinates.
      * @return weather.
      */
-    public String getWeather(Coordinates coordinates) {
+    public String getWeather(Coordinates coordinates) throws NoSuchAlgorithmException {
         return WeatherProvider.getProvider().getCurrentWeather(coordinates);
     }
 
     /** Change weather based on the changed conditions. */
-    public void changeWeather() {
+    public void changeWeather() throws NoSuchAlgorithmException {
         this.conditionsChanged();
     }
 }

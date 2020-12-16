@@ -1,19 +1,13 @@
-package simulator;
+package za.co.tmasethe.util;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.FileInputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import javax.xml.bind.DatatypeConverter;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * MD5Checker Class
- * 
- * @author  THapelo Masethe
- * @since   2019-06-29
- * @version 1.0
- */
 public class Md5Checker {
 
     private String fileContent;
@@ -32,10 +26,10 @@ public class Md5Checker {
         File file = new File(fileName);
         FileInputStream fileInputStream = new FileInputStream(file);
         byte[] content = new byte[(int) file.length()];
-        
-        fileInputStream.read(content);
+
+        int bytes = fileInputStream.read(content);
         fileInputStream.close();
-        this.fileContent = new String(content, "UTF-8");
+        this.fileContent = new String(content, StandardCharsets.UTF_8);
 
         // Static getInstance method is called with hashing MD5.
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
